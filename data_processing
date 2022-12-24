@@ -1,0 +1,44 @@
+void RemoveCharFromString(char *p  , char a , char b , char c , char d , char e , char f , char g) {
+
+
+  char * pDest = p;
+
+   while (*p){
+    if (*p != a  && *p != b && *p != c && *p != d && *p != e && *p != f  && *p != g)
+        *pDest++ = *p;
+      p++;
+   }
+
+   *pDest = '\0';
+
+
+}
+
+
+ while((ch=fgetc(fp1))!=EOF)
+    {
+    if (ch == '"') countData++; }
+
+countData/=2;
+char temporary[countData][25];
+
+unsigned long long int D2[countData/2];
+int humi[countData/2];
+
+struct Hum hum[countData/2];
+
+
+for (int i=0; i < countData; i++) {
+     fscanf(fp1, "%s", temporary1[i]);
+       if (i%2 == 0) {
+        RemoveCharFromString(temporary1[i] , ',' , ',' , ',' , ',' , '{' , '"' , '}' );
+        strcpy(hum[j].date_time , temporary1[i]);
+        RemoveCharFromString(temporary1[i] , ':' , '-' , 'T' , ',' , '{' , '"' , '}' );
+        D2[j] = D1[j] = atoi(temporary1[i]);
+       }
+         else if (i%2 ==1) {
+            RemoveCharFromString(temporary1[i] , ':' , '-' , 'T' , ',' , '{' , '"' , '}' );
+            humi[j] = hum[j].temp = atoi(temporary1[i]);
+            j++;
+         }
+}
